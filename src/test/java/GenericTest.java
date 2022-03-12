@@ -1,13 +1,11 @@
-import generics.GenericGeneralExample;
-import generics.GenericClassProblem;
-import generics.GenericClassProblemSolved;
-import generics.GenericMethod;
+import generics.*;
 import org.junit.Test;
 import person.Doctor;
 import person.Persona;
 import person.Teacher;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,20 +22,20 @@ public class GenericTest {
 
     @Test
     public void resolvingTheProblem() {
-//        GenericClassProblemSolved withInteger = new GenericClassProblemSolved(13);
-//        GenericClassProblemSolved withBoolean = new GenericClassProblemSolved(true);
-//        GenericClassProblemSolved withString = new GenericClassProblemSolved("Hi");
-//        GenericClassProblemSolved withDoctor = new GenericClassProblemSolved(new Doctor("Juan", "Ramirez", 28));
-//
-//        withInteger.printInformation();
-//        withBoolean.printInformation();
-//        withString.printInformation();
-//        withDoctor.printInformation();
+        GenericClassProblemSolved withInteger = new GenericClassProblemSolved(13);
+        GenericClassProblemSolved withBoolean = new GenericClassProblemSolved(true);
+        GenericClassProblemSolved withString = new GenericClassProblemSolved("Hi");
+        GenericClassProblemSolved withDoctor = new GenericClassProblemSolved(new Doctor("Juan", "Ramirez", 28));
 
-        new GenericClassProblemSolved<>(12).printInformation();
-        new GenericClassProblemSolved(true).printInformation();
-        new GenericClassProblemSolved("Hi").printInformation();
-        new GenericClassProblemSolved(new Doctor("Juan","Ramirez",28)).printInformation();
+        withInteger.printInformation();
+        withBoolean.printInformation();
+        withString.printInformation();
+        withDoctor.printInformation();
+
+//        new GenericClassProblemSolved<>(12).printInformation();
+//        new GenericClassProblemSolved(true).printInformation();
+//        new GenericClassProblemSolved("Hi").printInformation();
+//        new GenericClassProblemSolved(new Doctor("Juan","Ramirez",28)).printInformation();
     }
 
     @Test
@@ -78,6 +76,7 @@ public class GenericTest {
         HashMap<Integer, String> students = new HashMap<>();
         students.put(1, "Juan");
         students.put(2, "Diana");
-
     }
+
+
 }
