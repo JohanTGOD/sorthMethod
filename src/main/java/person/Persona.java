@@ -1,6 +1,6 @@
 package person;
 
-public class Persona {
+public class Persona implements Comparable<Persona> {
 
     private String name;
     private String lastName;
@@ -38,5 +38,18 @@ public class Persona {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int compareTo(Persona personToCompareWith) {
+        if (personToCompareWith.age == this.age) {
+            return personToCompareWith.name.compareTo(this.name) + personToCompareWith.getLastName().compareTo(this.lastName);
+        }
+        return 1;
+    }
+
+    public String toString() {
+        return "Hola soy: "+getName()+" "+ getLastName()+
+                " y tengo: "+getAge();
     }
 }
