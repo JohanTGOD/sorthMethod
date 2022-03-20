@@ -23,9 +23,4 @@ public class Doctor extends Persona
     public int returnAge() {
         return super.getAge();
     }
-
-    public String toString() {
-        return "Hola soy el doctor: "+super.getName()+" "+ super.getLastName()+
-                " y tengo: "+super.getAge();
-    }
 }
