@@ -4,7 +4,7 @@ public class Persona implements Comparable<Persona> {
 
     private String name;
     private String lastName;
-    private int age;
+    private Integer age;
 
     public Persona(String name, String lastName, int age) {
         this.name = name;
@@ -12,7 +12,7 @@ public class Persona implements Comparable<Persona> {
         this.age = age;
     }
 
-    public Persona(){
+    public Persona() {
 
     }
 
@@ -32,24 +32,42 @@ public class Persona implements Comparable<Persona> {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
     @Override
     public int compareTo(Persona personToCompareWith) {
-        if (personToCompareWith.age == this.age) {
-            return personToCompareWith.name.compareTo(this.name) + personToCompareWith.getLastName().compareTo(this.lastName);
+        if (this.name.compareTo(personToCompareWith.getName()) == 0) {
+            if (this.lastName.compareTo(personToCompareWith.getLastName()) == 0) {
+                if (this.age.compareTo(personToCompareWith.getAge()) == 0) {
+                    return 0;
+                } else if (this.age.compareTo(personToCompareWith.age) > 0) {
+                    return 3;
+                } else {
+                    return -3;
+                }
+            } else if (this.lastName.compareTo(personToCompareWith.getLastName()) > 0) {
+                return 2;
+            } else {
+                return -2;
+            }
+        } else if (this.name.compareTo(personToCompareWith.getName()) > 0) {
+            return 1;
+        } else {
+            return -1;
         }
-        return 1;
+
+        //El orden importa
+//        return this.getAge() - personToCompareWith.getAge();
     }
 
     public String toString() {
-        return "Hola soy: "+getName()+" "+ getLastName()+
-                " y tengo: "+getAge();
+        return "Hola soy: " + getName() + " " + getLastName() +
+                " y tengo: " + getAge();
     }
 }
