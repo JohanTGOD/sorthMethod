@@ -1,6 +1,6 @@
 package generics;
 
-import person.Persona;
+import objects.Persona;
 
 public class GenericClassProblem {
 

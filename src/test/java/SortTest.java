@@ -1,7 +1,7 @@
 import org.junit.Test;
-import person.Doctor;
-import person.Persona;
-import person.Teacher;
+import objects.Doctor;
+import objects.Persona;
+import objects.Teacher;
 
 import java.util.Arrays;
 import java.util.Collections;
